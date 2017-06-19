@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Node : MonoBehaviour
+public class Node
 {
+    // Member variables
     public bool walkable;
     public Vector3 position;
     public int gridX;
-    public Node parent;
     public int gridZ;
     public int gCost;
     public int hCost; // Heuristic
@@ -18,9 +18,10 @@ public class Node : MonoBehaviour
             return gCost + hCost;
         }
     }
+    public Node parent;
 
     // Constructor
-    public Node(bool walkable, Vector3 position)
+    public Node(bool walkable, Vector3 position, int gridX, int gridZ)
     {
         this.walkable = walkable;
         this.position = position;
